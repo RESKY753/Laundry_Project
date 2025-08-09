@@ -1,43 +1,56 @@
 <?php
 session_start();
-include "template/koneksi.php";
+include_once "../Controllers/template/koneksi.php"; 
 
+// ======================= PROSES REGISTER =======================
 if (isset($_POST["register"])) {
-    // Proses registrasi
-    $username = mysqli_real_escape_string($conn, $_POST["username"]);
-    $email    = mysqli_real_escape_string($conn, $_POST["email"]);
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    $nama      = mysqli_real_escape_string($conn, $_POST["nama"]);
+    $username  = mysqli_real_escape_string($conn, $_POST["username"]);
+    $password  = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    $id_outlet = (int) $_POST["id_outlet"];
+    $role      = mysqli_real_escape_string($conn, $_POST["role"]);
 
-    $check = mysqli_query($conn, "SELECT * FROM users WHERE email='$email' OR username='$username'");
+    // Cek apakah username sudah ada
+    $check = mysqli_query($conn, "SELECT * FROM tb_user WHERE username='$username'");
     if (mysqli_num_rows($check) > 0) {
-        echo "<script>alert('Username atau email sudah terdaftar!'); window.location.href='index.html';</script>";
+        echo " <script>window.location.href='../Views/index.php';</script>";
+        exit;
+    }
+
+    // Simpan data
+    $query = "INSERT INTO tb_user (nama, username, password, id_outlet, role) 
+              VALUES ('$nama', '$username', '$password', '$id_outlet', '$role')";
+    if (mysqli_query($conn, $query)) {
+        echo "<script>window.location.href='../Views/index.php';</script>";
     } else {
-        $query = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
-        if (mysqli_query($conn, $query)) {
-            echo "<script>alert('Registrasi berhasil! Silakan login.'); window.location.href='index.php';</script>";
-        } else {
-            echo "Error: " . mysqli_error($conn);
-        }
+        echo "Error: " . mysqli_error($conn);
     }
 }
 
+// ======================= PROSES LOGIN =======================
 if (isset($_POST["login"])) {
-    // Proses login
+
     $username = mysqli_real_escape_string($conn, $_POST["username"]);
     $password = $_POST["password"];
 
-    $result = mysqli_query($conn, "SELECT * FROM users WHERE username='$username'");
+    $result = mysqli_query($conn, "SELECT * FROM tb_user WHERE username='$username'");
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
 
         if (password_verify($password, $row["password"])) {
+            // Simpan sesi user
+            $_SESSION["id"]       = $row["id"];
+            $_SESSION["nama"]     = $row["nama"];
             $_SESSION["username"] = $row["username"];
-            echo "<script>alert('Login berhasil!'); window.location.href='dashboard.php';</script>";
+            $_SESSION["role"]     = $row["role"];
+            $_SESSION["id_outlet"]= $row["id_outlet"];
+
+            echo "<script>alert('Login berhasil!'); window.location.href='../Views/dashboard.php';</script>";
         } else {
-            echo "<script>alert('Password salah!'); window.location.href='index.html';</script>";
+            echo "<script>alert('Password salah!'); window.location.href='../Views/index.php';</script>";
         }
     } else {
-        echo "<script>alert('Username tidak ditemukan!'); window.location.href='index.html';</script>";
+        echo "<script>alert('Username tidak ditemukan!'); window.location.href='../Views/index.php';</script>";
     }
 }
 ?>

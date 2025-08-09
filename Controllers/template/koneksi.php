@@ -2,12 +2,13 @@
 $host = "localhost";
 $user = "root"; 
 $pass = "";     
-$db   = "laundry";
+$db   = "laundry"; 
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 
 if (!$conn) {
     die("Koneksi gagal: " . mysqli_connect_error());
-    echo "koneksi berhasil" ; 
+        echo "koneksi berhasil" ; 
+
 }
 ?>
