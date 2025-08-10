@@ -73,7 +73,7 @@
             <div class="toggle-panel toggle-right">
                 <h1>selamat datang kembali!</h1>
                 <p>udah punya akun?</p>
-                <button class="btn login-btn">Login</button>
+                <button class="btn login-btn">Loginnn</button>
             </div>
         </div>
     </div>
