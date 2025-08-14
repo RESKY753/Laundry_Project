@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding-bottom: 60px; /* ruang untuk navbar */
+  }
+
+  /* HEADER */
+  .header {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* SALDO / POIN */
+  .saldo-card {
+    background: white;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .saldo-card h3 {
+    margin: 0;
+    color: #3498db;
+  }
+
+  /* MENU */
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+    gap: 10px;
+    padding: 0 15px;
+  }
+  .menu-item {
+    background: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: black;
+    transition: transform 0.2s;
+  }
+  .menu-item:hover {
+    transform: scale(1.05);
+  }
+  .menu-item i {
+    font-size: 24px;
+    color: #3498db;
+    margin-bottom: 5px;
+  }
+
+  /* DAFTAR PESANAN */
+  .order-list {
+    margin: 15px;
+  }
+  .order-item {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+  }
+  .order-item span {
+    font-size: 14px;
+    color: gray;
+  }
+
+  /* NAVBAR */
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #3498db;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  }
+  .nav-item {
+    color: white;
+    text-align: center;
+    flex: 1;
+    padding: 8px 0;
+    text-decoration: none;
+    transition: background 0.1s;
+  }
+  .nav-item:hover {
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+  }
+  .active {
+    font-weight: bold;
+  }
+  .nav-item i {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 4px;
+  }

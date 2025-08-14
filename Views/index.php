@@ -31,7 +31,6 @@
             </form>
         </div>
 
-        <!-- Register Form -->
         <div class="form-box register">
             <form action="../Controllers/proses_login_regis.php" method="POST">
                 <h1>Registration</h1>
