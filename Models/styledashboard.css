@@ -2,10 +2,9 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    padding-bottom: 60px; /* ruang untuk navbar */
+    padding-bottom: 60px;
   }
-
-  /* HEADER */
+    
   .header {
     background-color: #3498db;
     color: white;
@@ -29,7 +28,7 @@ body {
     color: #3498db;
   }
 
-  /* MENU */
+  /* MENU CEPAT */
   .menu-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 kolom */
@@ -70,8 +69,7 @@ body {
     font-size: 14px;
     color: gray;
   }
-
-  /* NAVBAR */
+   /* NAVBAR */
   .navbar {
     display: flex;
     justify-content: space-around;
@@ -82,6 +80,7 @@ body {
     bottom: 0;
     width: 100%;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    font-weight: bold;
   }
   .nav-item {
     color: white;
@@ -96,11 +95,65 @@ body {
     color: black;
     border-radius: 10px;
   }
-  .active {
-    font-weight: bold;
-  }
   .nav-item i {
     font-size: 20px;
     display: block;
     margin-bottom: 4px;
+  }
+  
+  /* SLIDER BARU */
+  .slider-container {
+      position: relative;
+      overflow: hidden;
+      margin: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .slider-track {
+      display: flex;
+      width: 400%;
+      transition: transform 1s ease-in-out;
+  }
+  .slider-item {
+      width: 25%;
+      flex-shrink: 0;
+  }
+  .slider-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+  }
+  .slider-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      box-sizing: border-box;
+      z-index: 10;
+  }
+  .slider-nav button {
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5em;
+      transition: background 0.3s;
+  }
+  .slider-nav button:hover {
+      background: rgba(0, 0, 0, 0.8);
+  }
+
+  /* MEDIA QUERY untuk desktop */
+  @media (min-width: 768px) {
+    .slider-container {
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
