@@ -94,9 +94,9 @@
 
 <!-- NAVBAR -->
 <div class="navbar">
-  <a href="#" class="nav-item"><i class="fa-solid fa-house"></i>Home</a>
+  <a href="Dashboard.php" class="nav-item"><i class="fa-solid fa-house"></i>Home</a>
   <a href="#" class="nav-item"><i class="fa-solid fa-percent"></i>Discount</a>
-  <a href="#" class="nav-item"><i class="fa-solid fa-user"></i>Profil</a>
+  <a href="Profil.php" class="nav-item"><i class="fa-solid fa-user"></i>Profil</a>
 </div>
 
 <script>

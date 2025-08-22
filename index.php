@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login/Signup Form</title>
-    <link rel="stylesheet" href="../Models/style.css">
+    <link rel="stylesheet" href="Models/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <div class="container">
         <!-- Login Form -->
         <div class="form-box login">
-            <form action="../Controllers/proses_login_regis.php" method="POST">
+            <form action="Controllers/proses_login_regis.php" method="POST">
                 <h1>Login</h1>
                 <div class="input-box">
                     <input type="text" name="username" placeholder="Username" required>
