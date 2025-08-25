@@ -13,7 +13,7 @@ if (isset($_POST["register"])) {
     // Cek apakah username sudah ada
     $check = mysqli_query($conn, "SELECT * FROM tb_user WHERE username='$username'");
     if (mysqli_num_rows($check) > 0) {
-        echo " <script>window.location.href='../Views/index.php';</script>";
+        echo " <script>window.location.href='../index.php';</script>";
         exit;
     }
 
@@ -21,7 +21,7 @@ if (isset($_POST["register"])) {
     $query = "INSERT INTO tb_user (nama, username, password, id_outlet, role) 
               VALUES ('$nama', '$username', '$password', '$id_outlet', '$role')";
     if (mysqli_query($conn, $query)) {
-        echo "<script>window.location.href='../Views/index.php';</script>";
+        echo "<script>window.location.href='../index.php';</script>";
     } else {
         echo "Error: " . mysqli_error($conn);
     }

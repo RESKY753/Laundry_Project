@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+// Cek apakah user sudah login
+if (!isset($_SESSION["id"])) {
+    header("Location: ../index.php");
+    exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -12,7 +23,7 @@
 
 <!-- HEADER -->
 <div class="header">
-  <h2>Selamat Datang di LaundryKu</h2>
+  <h2>Selamat Datang, <?php echo $_SESSION["nama"]; ?> 👋</h2>
   <p>Bersihkan pakaian Anda dengan mudah</p>
 </div>
 

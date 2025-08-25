@@ -77,6 +77,6 @@
         </div>
     </div>
 
-    <script src="SignUp_LogIn_Form.js"></script>
+    <script src="Views/SignUp_LogIn_Form.js"></script>
 </body>
 </html>
