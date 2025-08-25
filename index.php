@@ -14,11 +14,11 @@
             <form action="Controllers/proses_login_regis.php" method="POST">
                 <h1>Login</h1>
                 <div class="input-box">
-                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="text" name="username" placeholder="Username" required autocomplete="on">
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" name="password" placeholder="Password" required autocomplete="on">
                     <i class='bx bxs-lock-alt'></i>
                 </div>
                 <button type="submit" name="login" class="btn">Login</button>
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-box register">
-            <form action="../Controllers/proses_login_regis.php" method="POST">
+            <form action="Controllers/proses_login_regis.php" method="POST">
                 <h1>Registration</h1>
                 <div class="input-box">
                     <input type="text" name="nama" placeholder="Nama Lengkap" required>

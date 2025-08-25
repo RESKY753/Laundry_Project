@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+// Cek apakah user sudah login
+if (!isset($_SESSION["id"])) {
+    header("Location: ../index.php");
+    exit;
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -24,26 +36,26 @@
 <div class="profile-info">
   <div class="info-item">
     <strong>Nama</strong>
-    <p>Hilman Nur Maulana</p>
+    <p><?php echo $_SESSION["nama"]; ?></p>
   </div>
   <div class="info-item">
-    <strong>Email</strong>
-    <p>hilman@gmail.com</p>
+    <strong>Username</strong>
+    <p><?php echo $_SESSION["username"]; ?></p>
   </div>
   <div class="info-item">
-    <strong>Telepon</strong>
-    <p>+62 812 3456 7890</p>
+   <strong>Role</strong>
+    <p><?php echo $_SESSION["role"]; ?></p>
   </div>
   <div class="info-item">
-    <strong>Alamat</strong>
-    <p>Jl. Raya Batujajar,Kec. Padalarang,Kab.  Bandung Barat</p>
+    <strong>ID Outlet</strong>
+    <p><?php echo $_SESSION["id_outlet"]; ?></p>
   </div>
 </div>
 
 <!-- AKSI -->
 <div class="profile-actions">
   <button class="btn-action"><i class="fa-solid fa-pen"></i> Edit Profil</button>
-  <button class="btn-action logout"><i class="fa-solid fa-right-from-bracket"></i> Keluar</button>
+  <button class="btn-action logout"><i class="fa-solid fa-right-from-bracket"></i>Keluar</button>
 </div>
 
 <!-- NAVBAR -->
