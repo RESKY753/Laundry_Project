@@ -54,9 +54,15 @@ if (!isset($_SESSION["id"])) {
 
 <!-- AKSI -->
 <div class="profile-actions">
-  <button class="btn-action"><i class="fa-solid fa-pen"></i> Edit Profil</button>
-  <button class="btn-action logout"><i class="fa-solid fa-right-from-bracket"></i>Keluar</button>
+  <button class="btn-action" onclick="window.location.href='editprofil.php'">
+    <i class="fa-solid fa-pen"></i> Edit Profil
+  </button>
+  <button class="btn-action logout" onclick="window.location.href='../logout.php'">
+    <i class="fa-solid fa-right-from-bracket"></i> Keluar
+  </button>
 </div>
+
+
 
 <!-- NAVBAR -->
 <div class="navbar">
