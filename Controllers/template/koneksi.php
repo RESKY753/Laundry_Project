@@ -4,8 +4,8 @@ $username = "root";
 $password = "";
 $DataBase = "laundry";
 // Koneksi ke database
-// $conn = new mysqli($server,$username,$password,$DataBase,3307);
-$conn = new mysqli($server,$username,$password,$DataBase);
+$conn = new mysqli($server,$username,$password,$DataBase,3307);
+// $conn = new mysqli($server,$username,$password,$DataBase);
 
 // Cek koneksi
 if ($conn->connect_error) {
