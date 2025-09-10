@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding-bottom: 70px;
+  }
+
+  .header {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .header h2 {
+    margin: 0;
+  }
+
+  .promo-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+  }
+  @media (min-width: 768px) {
+    .promo-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .promo-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  .promo-card:hover {
+    transform: scale(1.03);
+  }
+  .promo-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  .promo-content {
+    padding: 15px;
+  }
+  .promo-content h3 {
+    margin: 0;
+    color: #3498db;
+    font-size: 18px;
+  }
+  .promo-content p {
+    margin: 8px 0;
+    color: #555;
+    font-size: 14px;
+  }
+  .promo-btn {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+  .promo-btn:hover {
+    background-color: #2980b9;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #3498db;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  }
+  .nav-item {
+    color: white;
+    text-align: center;
+    flex: 1;
+    text-decoration: none;
+  }
+  .nav-item i {
+    font-size: 20px;
+    display: block;
+  }
+  

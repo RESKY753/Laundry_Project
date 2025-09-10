@@ -68,7 +68,7 @@ if (!isset($_SESSION["id"])) {
     <i class="fa-solid fa-weight-scale"></i>
     <p>Cuci Kiloan</p>
   </a>
-  <a href="#" class="menu-item">
+  <a href="layanan_cuci_satuan.php" class="menu-item">
     <i class="fa-solid fa-shirt"></i>
     <p>Cuci Satuan</p>
   </a>
@@ -76,7 +76,7 @@ if (!isset($_SESSION["id"])) {
     <i class="fa-solid fa-bolt"></i>
     <p>Cuci Ekspres</p>
   </a>
-  <a href="#" class="menu-item">
+  <a href="layanan_antar.php" class="menu-item">
     <i class="fa-solid fa-truck"></i>
     <p>Antar Jemput</p>
   </a>
@@ -106,7 +106,7 @@ if (!isset($_SESSION["id"])) {
 <!-- NAVBAR -->
 <div class="navbar">
   <a href="Dashboard.php" class="nav-item"><i class="fa-solid fa-house"></i>Home</a>
-  <a href="#" class="nav-item"><i class="fa-solid fa-percent"></i>Discount</a>
+  <a href="diskon.php" class="nav-item"><i class="fa-solid fa-percent"></i>Discount</a>
   <a href="Profil.php" class="nav-item"><i class="fa-solid fa-user"></i>Profil</a>
 </div>
 

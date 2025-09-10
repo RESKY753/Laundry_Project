@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-box register">
-            <form action="Controllers/proses_login_regis.php" method="POST">
+            <form action="Models/m_login.php" method="POST">
                 <h1>Registration</h1>
                 <div class="input-box">
                     <input type="text" name="nama" placeholder="Nama Lengkap" required>
