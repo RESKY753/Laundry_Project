@@ -11,7 +11,7 @@
     <div class="container">
         <!-- Login Form -->
         <div class="form-box login">
-            <form action="Controllers/proses_login_regis.php" method="POST">
+            <form action="Models/m_login.php" method="POST">
                 <h1>Login</h1>
                 <div class="input-box">
                     <input type="text" name="username" placeholder="Username" required autocomplete="off">
@@ -25,7 +25,7 @@
                 <p>hubungi kami di bawah ini jika ada laporan bug😃</p>
                 <div class="social-icons">
                     <a href="#"><i class='bx bxl-gmail'></i></a>
-                    <a href="#"><i class='bx bxl-whatsapp'></i></a>
+                    <a href=""><i class='bx bxl-whatsapp'></i></a>
                     <a href="#"><i class='bx bxl-instagram'></i></a>
                 </div>
             </form>

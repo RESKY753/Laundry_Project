@@ -1,12 +1,16 @@
 <?php
-session_start();
+session_start(); // Wajib agar bisa akses $_SESSION
 
-// Cek apakah user sudah login
-if (!isset($_SESSION["id"])) {
-    header("Location: ../index.php");
-    exit;
+include_once '../Models/m_user.php'; // Panggil file class User
+
+// Cek apakah user mengklik tombol logout (via URL ?action=logout)
+if (isset($_GET['action']) && $_GET['action'] === 'logout' && isset($_SESSION['username'])) {
+    $user = new User(); // Buat objek dari class User
+    $user->logout();    // Panggil fungsi logout
+    exit;               // Hentikan eksekusi script setelah logout
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="id">
@@ -55,9 +59,26 @@ if (!isset($_SESSION["id"])) {
   <button class="btn-action" onclick="window.location.href='editprofil.php'">
     <i class="fa-solid fa-pen"></i> Edit Profil
   </button>
-  <button class="btn-action logout" onclick="window.location.href='../logout.php'">
-    <i class="fa-solid fa-right-from-bracket"></i> Keluar
-  </button>
+<!-- Ketika diklik, akan memanggil fungsi JavaScript 'confirmLogout()' -->
+<button class="btn-action logout" onclick="confirmLogout()">
+  <i class="fa-solid fa-right-from-bracket"></i> Keluar
+</button>
+
+<script>
+// Fungsi untuk menampilkan konfirmasi logout
+function confirmLogout() {
+    // Tampilkan kotak dialog konfirmasi
+    const konfirmasi = confirm("Anda yakin ingin keluar?");
+    
+    // Jika user memilih "OK"
+    if (konfirmasi) {
+        // Arahkan ke URL dengan parameter action=logout
+        // Nanti akan ditangani oleh PHP di halaman ini
+        window.location.href = '?action=logout';
+    }
+}
+</script>
+
 </div>
 
 

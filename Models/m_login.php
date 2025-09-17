@@ -47,10 +47,10 @@ if (isset($_POST["login"])) {
 
             echo "<script>alert('Login berhasil!'); window.location.href='../Views/dashboard.php';</script>";
         } else {
-            echo "<script>alert('Password salah!'); window.location.href='../Views/index.php';</script>";
+            echo "<script>alert('Password salah!'); window.location.href='../index.php';</script>";
         }
     } else {
-        echo "<script>alert('Username tidak ditemukan!'); window.location.href='../Views/index.php';</script>";
+        echo "<script>alert('Username tidak ditemukan!'); window.location.href='../index.php';</script>";
     }
 }
 

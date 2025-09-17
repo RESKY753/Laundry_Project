@@ -16,17 +16,31 @@ class user
         }
     }
         
-        function logout ()
-        {
-            session_start();
-            session_destroy();
-            header("Location: ../index.php");
-        }
-       
-        function hapus_data()
-        {
-            $conn = new koneksi();
-            $sql = "DELETE FROM tb_user WHERE id='$id'";
+        function logout()
+    {
+    // Cek apakah session sudah dimulai, jika belum maka mulai session
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start(); // Mulai session untuk bisa menghancurkannya
+    }
+
+    // Hancurkan semua data session (logout user)
+    session_destroy(); // Menghapus seluruh data session pengguna saat ini
+
+    // Tampilkan notifikasi logout berhasil (menggunakan JavaScript)
+    // Setelah itu redirect ke halaman login (../index.php)
+    echo "<script>
+        alert('Anda berhasil logout'); // Menampilkan popup pesan
+        window.location.href = '../index.php'; // Arahkan pengguna ke halaman login
+    </script>";
+
+    // Menghentikan eksekusi script PHP setelah logout dan redirect
+    exit;
+    }
+
+    function hapus_data($id)
+    {
+        $conn = new koneksi();
+        $sql = "DELETE FROM tb_user WHERE id='$id'";
             $query = mysqli_connect($conn->koneksi, $sql);
     
             if ($query) {
@@ -36,7 +50,7 @@ class user
             }
         }
 
-        function edit_data()
+        function edit_data($id)
         {
          $conn = new koneksi();
          $sql = "UPDATE tb_user SET nama='$nama', username='$username', password='$password', role='$role' WHERE id='$id'";
